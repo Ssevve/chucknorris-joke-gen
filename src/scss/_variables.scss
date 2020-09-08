@@ -1,0 +1,27 @@
+// Colors
+$lightPrimary: #eaecef;
+$lightSecondary: #ffffff;
+$accent: #cc4425;
+$dark: #3e4147;
+
+// Fonts
+$ffHeading: 'Oswald', sans-serif;
+$ffButton: 'Oswald', sans-serif;
+$ffBody: 'Arvo', serif;
+
+// Mixins
+$breakpoints: (
+	'medium': 48rem,
+	'big': 56.25rem,
+	'large': 75rem,
+);
+
+@mixin respond-to($breakpoint) {
+	// If the key exists in the map
+	@if map-has-key($breakpoints, $breakpoint) {
+		// Prints a media query based on the value
+		@media (min-width: map-get($breakpoints, $breakpoint)) {
+			@content;
+		}
+	}
+}

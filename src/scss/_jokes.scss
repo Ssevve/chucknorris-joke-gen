@@ -1,0 +1,68 @@
+.jokes {
+  margin: 5rem auto 11rem auto;
+
+  &__list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    row-gap: 1.5rem;
+
+    @include respond-to(medium) {
+      flex-direction: row;
+      flex-wrap: wrap;
+      column-gap: 1.5rem;     
+    }
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: $lightSecondary;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    padding: 2rem;
+    position: relative;
+
+    @include respond-to(medium) {
+      width: 24rem;
+    }
+    
+    &::before,
+    &::after {
+      content: '';
+      height: 0.0625rem;
+      width: 3rem;
+      background-color: $accent;
+      position: absolute;
+    }
+
+    &::before {
+      margin: 0 auto 1.5rem;
+      // parent element has padding of 2rem
+      top: 2rem;
+    }
+
+    &::after {
+        margin: 1.5rem auto 0;
+        // parent element has padding of 2rem
+        bottom: 2rem;
+      }
+  }  
+
+  &__joke {
+    margin: 2rem auto;
+    font-size: 0.95rem;
+    text-align: left;
+    max-width: 20rem;
+    word-break: break-word;
+    word-spacing: 0.1rem;
+
+    @include respond-to(medium) {
+      font-size: 1rem;
+      display: block;
+    }
+  }
+}

@@ -1,0 +1,171 @@
+.input {
+	@include respond-to(medium) {
+		display: flex;
+		justify-content: space-evenly;
+	}
+
+	@include respond-to(big) {
+		justify-content: space-evenly;
+	}
+}
+
+.search {
+	display: flex;
+	margin: 0 auto;
+	justify-content: center;
+	position: relative;
+
+	@include respond-to(medium) {
+		margin: 0;
+	}
+
+	&__input {
+		display: flex;
+		flex-direction: column;
+		width: 60%;
+
+		@include respond-to(medium) {
+			width: 100%;
+			max-width: 26.125rem;
+		}
+	}
+
+	&__label {
+		font-size: 0.8rem;
+		margin-bottom: 0.1rem;
+	}
+
+	&__field {
+		padding: 0.5rem;
+		border: none;
+		box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+		background-color: $lightSecondary;
+		border-radius: 5px 0 0 5px;
+		font-family: $ffBody;
+		font-size: 0.95rem;
+		outline: none;
+		width: 100%;
+
+		// Search field and search buttons were different heights in firefox and chrome.
+		// Settings its height to be the same as button's fixes that.
+		height: 2.375rem;
+
+		@include respond-to(medium) {
+			font-size: 1rem;
+		}
+
+		@include respond-to(big) {
+			width: 18.75rem;
+		}
+	}
+
+	&__btn {
+		border-radius: 0 5px 5px 0;
+		background-color: $dark;
+		align-self: flex-end;
+		display: flex;
+		align-items: center;
+		box-shadow: 2px 0 5px rgba(0, 0, 0, 0.3);
+
+		@include respond-to(medium) {
+			margin-bottom: 0.05rem;
+		}
+
+		@include respond-to(large) {
+			margin-right: 5%;
+		}
+	}
+
+	&__field,
+	&__btn {
+		@include respond-to(medium) {
+			margin-bottom: 0.05rem;
+			height: 2.8125rem;
+		}
+	}
+
+	&__icon {
+		margin-right: 0.25rem;
+	}
+}
+
+.random {
+	display: flex;
+	justify-content: center;
+	margin-top: 1.5rem;
+	align-items: center;
+
+	@include respond-to(medium) {
+		margin-top: 1.26rem;
+		margin-left: 2rem;
+		justify-content: flex-start;
+		flex: 0;
+	}
+
+	@include respond-to(big) {
+		margin-left: 0;
+		margin-top: 1.385rem;
+	}
+
+	.btn--random {
+		background-color: $accent;
+
+		&:hover,
+		&:focus {
+			background: transparent;
+			color: $accent;
+		}
+	}
+
+	p {
+		margin: 0 0.5rem;
+		font-size: 0.95rem;
+	}
+}
+
+.categories {
+	width: 20.625rem;
+	max-width: 100%;
+	list-style: none;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-evenly;
+	margin: 0.75rem auto 0 auto;
+	padding: 0.5rem;
+	border-radius: 5px;
+
+	@include respond-to(medium) {
+		width: 80%;
+		width: 36.5rem;
+	}
+
+	@include respond-to(big) {
+		justify-content: center;
+		width: auto;
+	}
+}
+
+.categories.hide {
+	display: none;
+}
+
+.btn--category {
+	padding: 0.4rem;
+	margin: 0.25rem;
+	border: 1px solid $dark;
+	flex-grow: 1;
+	font-size: 0.75rem;
+	height: auto;
+	background: $lightPrimary;
+	color: $dark;
+
+	&:hover,
+	&:focus {
+		background-color: $dark;
+		color: $lightPrimary;
+	}
+
+	@include respond-to(big) {
+		font-size: 0.8rem;
+	}
+}
