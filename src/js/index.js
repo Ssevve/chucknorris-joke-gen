@@ -183,7 +183,7 @@ document
 				jokes.forEach((joke) => renderJoke(joke));
 			} else {
 				// No jokes found that match the given string
-				renderJoke({ value: 'No jokes found. Try something different.' });
+				renderJoke({ value: 'No jokes found.<br /> Try something different.' });
 			}
 
 			clearSearchField();
